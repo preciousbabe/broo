@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+      <title>RealEstateX - Find Your Dream Stay</title>
+  </head>
+  <body>
+    <nav>
+      <div class="nav__header">
+        <div class="nav__logo">
+          <a href="#">RealEstateX.</a>
+        </div>
+        <div class="nav__menu__btn" id="menu-btn">
+          <i class="ri-menu-3-line"></i>
+        </div>
+      </div>
+      <ul class="nav__links" id="nav-links">
+        <li><a href="#home">HOME</a></li>
+        <li><a href="#service">SERVICES</a></li>
+        <li><a href="#property">PROPERTIES</a></li>
+        <li><a href="#blog">BLOGS</a></li>
+        <li><a href="#contact">CONTACT</a></li>
+      </ul>
+    </nav>
+
+    <header id="header">
+      <div class="header__image"></div>
+      <div class="header__content">
+        <h1>Find Your Dream Home With Ease.</h1>
+      </div>
+     <form id="searchForm" action="javascript:void(0);">
+  <div class="input__group">
+    <label for="location">Location</label>
+    <input id="location" type="text" placeholder="Location" />
+  </div>
+  <div class="input__group">
+    <label for="propertyType">Property Type</label>
+    <input id="propertyType" type="text" placeholder="Property Type" />
+  </div>
+  <div class="input__group">
+    <label for="price">Max Price</label>
+    <input id="price" type="number" placeholder="Max Price" />
+  </div>
+  <button class="btn" type="submit">
+    <i class="ri-search-line"></i>
+  </button>
+</form>
+
+    </header>
+
+    <section class="service">
+      <div class="section__container service__container" id="service">
+        <h2 class="section__header">What We Offer</h2>
+        <div class="service__grid">
+          <div class="service__card">
+            <i class="ri-calendar-check-line"></i>
+            <h4>Easy Booking</h4>
+    <p>Reserve your dream property in just a few clicks with instant confirmation and mobile-friendly booking.</p>
+  </div>
+          <div class="service__card">
+          <i class="ri-verified-badge-line"></i> 
+            <h4>Trusted Hosts</h4>
+    <p>Every host is identity-verified and reviewed by our community, ensuring a safe and reliable stay experience.</p>
+  </div>
+          <div class="service__card">
+            <i class="ri-shield-check-line"></i>
+            <h4>Secure Payments</h4>
+    <p>Pay confidently with end-to-end encryption and multiple payment options for your convenience.</p>
+  </div>
+        </div>
+      </div>
+    </section>
+
+
+     <section class="experience">
+      <div class="experience__image"></div>
+      <div class="experience__content">
+        <h2 class="section__header">We Provide You<br />The Best Experience</h2>
+        <p>
+        At RealEstateX, we believe the right property can change everything. Whether you’re searching for your first home, looking for an investment opportunity, or simply trying to find a place that feels just right, we’re here to make the process simple, transparent, and stress-free.
+
+We understand that choosing a property isn’t just about walls and roofs — it’s about lifestyle, community, and future possibilities. That’s why our platform is designed to connect you with verified listings that match your unique needs, preferences, and budget.
+
+From modern apartments in the city to spacious family homes in quiet neighborhoods, from cozy starter homes to high-end luxury estates — RealEstateX helps you discover properties that truly fit your vision of home.
+        </p>
+        <div class="experience__btn">
+          <button class="btn">ALL PROPERTY</button>
+        </div>
+      </div>
+    
+    </section>
+
+    <section class="section__container property__container" id="property">
+      <h2 class="section__header">Find Your Next Home</h2>
+      <!-- Slider main container -->
+      <div class="swiper">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <div class="swiper-slide">
+            <div class="property__card">
+              <img src="images/prop1.webp" alt="property" />
+              <div class="property__details">
+                <div class="property__details__header">
+                  <h4>Oceanview Villas</h4>
+                  <h5>$1,250,000</h5>
+                </div>
+                <div class="property__amenities">
+                  <div>
+                    <span><i class="ri-hotel-bed-line"></i></span> 5
+                  </div>
+                  <div>
+                    <span><i class="ri-showers-line"></i></span> 6
+                  </div>
+                  <div>
+                    <span><i class="ri-dashboard-fill"></i></span> 4000ft
+                  </div>
+                </div>
+                <div class="property__location">
+                  <span><i class="ri-map-pin-5-line"></i></span> 784 Coastal
+                  Drive, USA
+                </div>
+              </div>
+            </div>
+          </div>
+            <div class="swiper-slide">
+            <div class="property__card">
+              <img src="images/prop8.webp" alt="property" />
+              <div class="property__details">
+                <div class="property__details__header">
+                  <h4>Maplewood Cottage</h4>
+                  <h5>$540,000</h5>
+                </div>
+                <div class="property__amenities">
+                  <div>
+                    <span><i class="ri-hotel-bed-line"></i></span> 4
+                  </div>
+                  <div>
+                    <span><i class="ri-showers-line"></i></span> 5
+                  </div>
+                  <div>
+                    <span><i class="ri-dashboard-fill"></i></span> 3500ft
+                  </div>
+                </div>
+                <div class="property__location">
+                  <span><i class="ri-map-pin-5-line"></i></span> 980 Maple
+                  Street, Denver
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="property__card">
+              <img src="images/prop2.webp" alt="property" />
+              <div class="property__details">
+                <div class="property__details__header">
+                  <h4>Greenwood Estate</h4>
+                  <h5>$850,000</h5>
+                </div>
+                <div class="property__amenities">
+                  <div>
+                    <span><i class="ri-hotel-bed-line"></i></span> 4
+                  </div>
+                  <div>
+                    <span><i class="ri-showers-line"></i></span> 5
+                  </div>
+                  <div>
+                    <span><i class="ri-dashboard-fill"></i></span> 5500ft
+                  </div>
+                </div>
+                <div class="property__location">
+                  <span><i class="ri-map-pin-5-line"></i></span> 4521 Oakwood
+                  Lane, Austin
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="swiper-slide">
+            <div class="property__card">
+              <img src="images/prop6.webp" alt="property" />
+              <div class="property__details">
+                <div class="property__details__header">
+                  <h4>Greenwood Estate</h4>
+                  <h5>$850,000</h5>
+                </div>
+                <div class="property__amenities">
+                  <div>
+                    <span><i class="ri-hotel-bed-line"></i></span> 4
+                  </div>
+                  <div>
+                    <span><i class="ri-showers-line"></i></span> 5
+                  </div>
+                  <div>
+                    <span><i class="ri-dashboard-fill"></i></span> 5500ft
+                  </div>
+                </div>
+                <div class="property__location">
+                  <span><i class="ri-map-pin-5-line"></i></span> 4521 Oakwood
+                  Lane, Austin
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="property__card">
+              <img src="images/prop3.webp" alt="property" />
+              <div class="property__details">
+                <div class="property__details__header">
+                  <h4>Skyline Tower Apartments</h4>
+                  <h5>$2,500,000</h5>
+                </div>
+                <div class="property__amenities">
+                  <div>
+                    <span><i class="ri-hotel-bed-line"></i></span> 6
+                  </div>
+                  <div>
+                    <span><i class="ri-showers-line"></i></span> 7
+                  </div>
+                  <div>
+                    <span><i class="ri-dashboard-fill"></i></span> 4500ft
+                  </div>
+                </div>
+                <div class="property__location">
+                  <span><i class="ri-map-pin-5-line"></i></span> 2201 West 5th
+                  Street, New York
+                </div>
+              </div>
+            </div>
+          </div>
+            <div class="swiper-slide">
+            <div class="property__card">
+              <img src="images/prop7.webp" alt="property" />
+              <div class="property__details">
+                <div class="property__details__header">
+                  <h4>Maplewood Cottage</h4>
+                  <h5>$540,000</h5>
+                </div>
+                <div class="property__amenities">
+                  <div>
+                    <span><i class="ri-hotel-bed-line"></i></span> 4
+                  </div>
+                  <div>
+                    <span><i class="ri-showers-line"></i></span> 5
+                  </div>
+                  <div>
+                    <span><i class="ri-dashboard-fill"></i></span> 3500ft
+                  </div>
+                </div>
+                <div class="property__location">
+                  <span><i class="ri-map-pin-5-line"></i></span> 980 Maple
+                  Street, Denver
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="property__card">
+              <img src="images/prop4.webp" alt="property" />
+              <div class="property__details">
+                <div class="property__details__header">
+                  <h4>Maplewood Cottage</h4>
+                  <h5>$540,000</h5>
+                </div>
+                <div class="property__amenities">
+                  <div>
+                    <span><i class="ri-hotel-bed-line"></i></span> 4
+                  </div>
+                  <div>
+                    <span><i class="ri-showers-line"></i></span> 5
+                  </div>
+                  <div>
+                    <span><i class="ri-dashboard-fill"></i></span> 3500ft
+                  </div>
+                </div>
+                <div class="property__location">
+                  <span><i class="ri-map-pin-5-line"></i></span> 980 Maple
+                  Street, Denver
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="property__card">
+              <img src="images/prop5.webp" alt="property" />
+              <div class="property__details">
+                <div class="property__details__header">
+                  <h4>Royal Crest Mansion</h4>
+                  <h5>$4,800,000</h5>
+                </div>
+                <div class="property__amenities">
+                  <div>
+                    <span><i class="ri-hotel-bed-line"></i></span> 5
+                  </div>
+                  <div>
+                    <span><i class="ri-showers-line"></i></span> 6
+                  </div>
+                  <div>
+                    <span><i class="ri-dashboard-fill"></i></span> 5000ft
+                  </div>
+                </div>
+                <div class="property__location">
+                  <span><i class="ri-map-pin-5-line"></i></span> 1789 Kingsway,
+                  Beverly Hills
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <section class="portfolio" id="portfolio">
+      <div class="section__container portfolio__container">
+        <div class="portfolio__header">
+          <h2 class="section__header">
+            Experience & Innovate Solutions for Creative Design & Development
+            Agency
+          </h2>
+          <p class="section__description">
+            At AdencyBD, we blend years of industry experience with
+            forward-thinking innovation to craft tailored design and development
+            solutions. Our creative approach ensures every project stands
+            out—whether it's building powerful digital products or developing
+            scalable web experiences.
+          </p>
+        </div>
+        <div class="portfolio__content">
+          <div class="portfolio__image">
+            <div class="portfolio__image__content">
+              <div>
+                <h4>16</h4>
+                <p>Years<br />Experience</p>
+              </div>
+              <div>
+                <h4>250+</h4>
+                <p>Available to sell <br />Properties</p>
+              </div>
+            </div>
+            <img src="images/team.webp" alt="portfolio" />
+          </div>
+          <ul class="portfolio__list">
+            <li>
+              <span>01</span>
+              <div>
+                <h4>Discover the RealEstateX Advantage</h4>
+                <p class="section__description">
+                 At RealEstateX, we don’t just connect people with properties — 
+      we help you find the right place to call home or the perfect 
+      investment that matches your goals. Here’s why thousands trust us 
+      when it comes to real estate.
+                </p>
+              </div>
+            </li>
+            <li>
+              <span>02</span>
+              <div>
+                <h4>Verified Properties</h4>
+                <p class="section__description">
+                  Every property listed on our platform goes through a thorough 
+        verification process. You can browse with peace of mind knowing 
+        that each home meets our strict standards for quality and legitimacy.
+                </p>
+              </div>
+            </li>
+            <li>
+              <span>03</span>
+              <div>
+                <h4>Personalized Experience</h4>
+                <p class="section__description">
+                  We understand that no two buyers or renters are alike. 
+        Our smart filters and tailored recommendations make sure 
+        you only see properties that truly match your needs and lifestyle.
+                </p>
+              </div>
+            </li>
+             <li>
+              <span>04</span>
+              <div>
+                <h4>Secure Transactions</h4>
+                <p class="section__description">
+                 Buying or renting a property is a big step. 
+        That’s why we use trusted, encrypted payment solutions 
+        and partner only with licensed professionals to protect your interests.
+                </p>
+              </div>
+            </li>
+             <li>
+              <span>05</span>
+              <div>
+                <h4>Dedicated Support</h4>
+                <p class="section__description">
+                 Have questions or need guidance? Our friendly support team 
+        is here to assist you every step of the way — from your first 
+        search to closing the deal.
+                    </p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="chatbox">
+    <h3 class="section__header">Ask Questions? </h3>
+     <h4>Do you have questions you will like to ask?, go on...</h4>
+    <div class="chat-messages" id="chat-messages"></div>
+    <div class="chat-input">
+      <div style="flex:1; position: relative;">
+        <input type="text" id="user-input" placeholder="Type your question..." autocomplete="off">
+        <div id="suggestions" class="suggestions" style="display: none;"></div>
+      </div>
+      <button onclick="sendMessage()">Send</button>
+    </div>
+  </section>
+
+  
+
+     <footer>
+      <div class="section__container footer__container">
+        <div class="footer__col">
+          <a href="#" class="footer__logo">RealEstateX </a>
+        </div>
+        <div class="footer__col">
+          <ul class="footer__links">
+            <li><a href="#">Help</a></li>
+            <li><a href="#">Privacy Settings</a></li>
+            <li><a href="#">Log In</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <ul class="footer__links">
+            <li><a href="#">Cookie Policy</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms & Services</a></li>
+            <li><a href="#">Company Details</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <ul class="footer__links">
+            <li><a href="#">Explore</a></li>
+            <li><a href="#">Category</a></li>
+            <li><a href="#">Partners</a></li>
+            <li><a href="#">Trips</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bar">
+        Copyright © 2025 RealEstateX. All rights reserved.
+      </div>
+    </footer>
+
+
+      <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>

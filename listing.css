@@ -1,0 +1,83 @@
+/* Listing Hero */
+.listing-hero {
+  position: relative;
+}
+.listing-hero img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+.listing-hero .overlay {
+  position: absolute;
+  bottom: 20px;
+  left: 5%;
+  background: rgba(0,0,0,0.6);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+}
+.listing-hero .price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #FFD700;
+}
+
+/* Listing Details */
+.listing-details {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+  padding: 3rem 5%;
+}
+.listing-details h3 { margin-bottom: 1rem; }
+.listing-details p { margin-bottom: 1rem; }
+
+.amenities {
+  list-style: none;
+  margin-top: 1rem;
+}
+.amenities li {
+  margin: 0.3rem 0;
+  color: #333;
+}
+
+/* Booking Box */
+.booking-box {
+  background: #fff;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.booking-box form {
+  display: flex;
+  flex-direction: column;
+}
+.booking-box label {
+  margin: 0.5rem 0 0.2rem;
+  font-weight: 500;
+}
+.booking-box input {
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+.booking-box button {
+  background: #1E90FF;
+  color: white;
+  border: none;
+  padding: 0.8rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.booking-box button:hover {
+  background: #0d6efd;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .listing-details {
+    grid-template-columns: 1fr;
+  }
+}

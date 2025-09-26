@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cozy Cabin in the Woods</title>
+  <style>
+    body { margin: 0; font-family: Arial, sans-serif; background: #f9f9f9; }
+    header { background: #333; color: white; padding: 15px 30px; display: flex; justify-content: space-between; align-items: center; }
+    header a { color: white; text-decoration: none; margin-left: 20px; }
+    .hero { background: url('https://source.unsplash.com/1600x600/?cabin,forest') no-repeat center/cover; color: white; text-align: center; padding: 100px 20px; }
+    .hero h1 { font-size: 3rem; margin-bottom: 10px; }
+    .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; padding: 30px; }
+    .gallery img { width: 100%; border-radius: 10px; }
+    .details { padding: 30px; background: white; border-radius: 10px; margin: 30px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+    .details h2 { margin-bottom: 10px; }
+    .details ul { padding-left: 20px; }
+    .price { font-size: 1.5rem; color: #27ae60; margin: 20px 0; }
+    .booking { text-align: center; padding: 30px; }
+    .booking button { background: #27ae60; color: white; border: none; padding: 15px 30px; border-radius: 5px; font-size: 1rem; cursor: pointer; }
+    .booking button:hover { background: #219150; }
+    footer { text-align: center; padding: 20px; background: #333; color: white; margin-top: 40px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h2>RealEstateX</h2>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="#">Listings</a>
+      <a href="#">Host</a>
+      <a href="#">Login</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Cozy Cabin in the Woods</h1>
+    <p>Perfect getaway surrounded by nature</p>
+  </section>
+
+  <section class="gallery">
+    <img src="https://source.unsplash.com/800x600/?cabin,wood" alt="Cabin exterior">
+    <img src="https://source.unsplash.com/800x600/?cabin,fireplace" alt="Cabin fireplace">
+    <img src="https://source.unsplash.com/800x600/?cabin,bedroom" alt="Cabin bedroom">
+    <img src="https://source.unsplash.com/800x600/?cabin,forest" alt="Cabin forest view">
+  </section>
+
+  <section class="details">
+    <h2>Property Details</h2>
+    <p>This cabin offers peace and quiet in the middle of nature. A perfect retreat for couples or solo travelers seeking tranquility.</p>
+    <ul>
+      <li>1 Bedroom</li>
+      <li>1 Bathroom</li>
+      <li>Fireplace & Wooden Interior</li>
+      <li>Surrounded by Forest</li>
+      <li>Outdoor Seating Area</li>
+      <li>WiFi & Essentials</li>
+    </ul>
+    <p class="price">$150 / night</p>
+  </section>
+
+  <section class="booking">
+    <button>Book Now</button>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 RealEstateX. All rights reserved.</p>
+  </footer>
+</body>
+</html>
