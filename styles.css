@@ -305,7 +305,7 @@ header .btn {
   padding-block: 5rem;
   display: grid;
   position: relative;
-  isolation: isolate;
+  /* isolation: isolate; */
 }
 
 .experience__image {
@@ -319,7 +319,7 @@ header .btn {
 
 .experience__content {
   padding-inline: 1rem;
-  padding-block: 2rem 20rem;
+  padding-block: 2rem 1rem;
 }
 
 .experience__content p {
@@ -511,6 +511,7 @@ header .btn {
   display: flex;
   flex-direction: column;
   overflow: hidden;
+   padding-block: 2rem 1rem;
 }
 
 /* Header */
@@ -536,7 +537,7 @@ header .btn {
 .chat-input input {
    flex: 1;
     border: none; 
-    padding: 25px; 
+    /* padding: 25px;  */
     font-size: 1rem;
    }
 
@@ -599,7 +600,7 @@ header .btn {
 .chat-input input {
   flex: 1;
   border: none;
-  padding: 16px;
+  /* padding: 16px; */
   font-size: 1rem;
 }
 
@@ -785,10 +786,6 @@ footer {
     padding-block: 2rem 8rem;
   }
 
-  .experience__stats {
-    flex-direction: row;
-    text-align: left;
-  }
 
   .property__details {
     padding: 1.5rem;
