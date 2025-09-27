@@ -316,7 +316,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-
 const qaPairs = {
   // 🏠 About Properties
   "Do you have houses for sale?": [
@@ -331,6 +330,16 @@ const qaPairs = {
     "From apartments, houses, and land to luxury villas — we cover all property types.",
     "✨ We handle sales and rentals for apartments, homes, land, and even commercial spaces."
   ],
+  "Do you handle commercial properties?": [
+    "🏢 Yes, we list offices, shops, and warehouses available for sale and rent.",
+    "Absolutely — commercial spaces are part of our portfolio."
+  ],
+  "Do you offer luxury properties?": [
+    "🌟 Yes, we have premium listings including villas, penthouses, and luxury estates.",
+    "From high-end apartments to beachfront villas — we’ve got luxury options too."
+  ],
+
+  // 📅 Viewings & Tours
   "How can I schedule a viewing?": [
     "📅 Simply pick a property you like and request a viewing directly from the listing.",
     "You can book a viewing by contacting the agent on the property details page."
@@ -338,6 +347,10 @@ const qaPairs = {
   "Do you offer virtual tours?": [
     "🖥️ Yes, many of our listings include 3D virtual tours.",
     "Some properties come with virtual tours — look for the 🎥 icon on the listing."
+  ],
+  "Can I visit multiple properties in one day?": [
+    "Yes, our agents can arrange back-to-back viewings for your convenience.",
+    "Of course — just let us know which properties interest you and we’ll schedule accordingly."
   ],
 
   // 💰 Pricing & Costs
@@ -375,6 +388,10 @@ const qaPairs = {
     "🌱 Absolutely — we also list lands available for purchase.",
     "Yes, land sales are part of our services."
   ],
+  "Do you deal with new developments?": [
+    "🏗️ Yes, we feature brand new builds and off-plan projects.",
+    "We partner with developers to bring you the latest new projects."
+  ],
 
   // 📱 Services & Apps
   "Is there a mobile app?": [
@@ -404,41 +421,93 @@ const qaPairs = {
     "Yes, our agents are just a phone call away."
   ],
 
+  // 📑 Paperwork & Legal
   "Do you help with paperwork?": [
-  "📑 Yes, we guide you through all the required paperwork and documentation.",
-  "Absolutely — our team assists with contracts, agreements, and all legal documents."
-],
-"What documents do I need to buy a property?": [
-  "📝 Usually you’ll need an ID, proof of income, and in some cases, a financing approval letter. We’ll guide you step by step.",
-  "The documents depend on the property, but generally include ID, proof of funds, and signed agreements."
-],
-"Do you handle legal documentation?": [
-  "⚖️ Yes, we work with trusted legal experts to make sure your paperwork is safe and valid.",
-  "We coordinate with lawyers and notaries to ensure all documentation is handled properly."
-],
+    "📑 Yes, we guide you through all the required paperwork and documentation.",
+    "Absolutely — our team assists with contracts, agreements, and all legal documents."
+  ],
+  "What documents do I need to buy a property?": [
+    "📝 Usually you’ll need an ID, proof of income, and in some cases, a financing approval letter. We’ll guide you step by step.",
+    "The documents depend on the property, but generally include ID, proof of funds, and signed agreements."
+  ],
+  "Do you handle legal documentation?": [
+    "⚖️ Yes, we work with trusted legal experts to make sure your paperwork is safe and valid.",
+    "We coordinate with lawyers and notaries to ensure all documentation is handled properly."
+  ],
 
   // 📝 Other Practical Questions
   "How long does the buying process take?": [
     "⏳ It depends on the property and paperwork, but most deals close within a few weeks.",
     "On average, the buying/renting process takes a few days to a few weeks depending on requirements."
+  ],
+  "Do you help first-time buyers?": [
+    "🎉 Yes, we provide extra support and guidance for first-time homebuyers.",
+    "Buying your first home? Don’t worry — our agents walk you through every step."
+  ],
+
+  // 🏠 Renting
+  renting: [
+    "🏘️ We have plenty of rental options for short-term and long-term stays.",
+    "Yes, from budget-friendly rentals to premium apartments — we cover all."
+  ],
+  "Do you help with furnished apartments?": [
+    "🛋️ Yes, we list fully-furnished, semi-furnished, and unfurnished apartments.",
+    "We’ve got furnished rentals — perfect for quick move-ins."
+  ],
+
+  // 🛒 Buying
+  buying: [
+    "🏡 You can buy houses, land, and even commercial properties on our platform.",
+    "Buying is simple — browse listings, book a viewing, and proceed with secure payments."
+  ],
+
+  // 💼 Selling
+  selling: [
+    "📢 Yes, we help owners list and sell their properties quickly.",
+    "Our agents ensure your property gets maximum exposure and the best deal."
+  ],
+  "Can I list my property with you?": [
+    "✅ Absolutely! Property owners can list directly through our platform.",
+    "Yes, just head to the 'List Property' section and upload your details."
+  ],
+  "How fast can you sell my property?": [
+    "⏱️ Speed depends on location, pricing, and demand — but we work hard to sell quickly.",
+    "Many listings get interest within days thanks to our wide reach."
   ]
 };
 
-// --- Simple regex-based intent detection ---
+// --- Synonym & intent normalization ---
 function detectIntent(text) {
   text = text.toLowerCase();
 
-  if (/app|download|mobile/.test(text)) return "app";
-  if (/price|cost|how much|fee/.test(text)) return "pricing";
-  if (/paperwork|documents|docs|agreement/.test(text)) return "paperwork";
-  if (/location|where|area|site/.test(text)) return "location";
-  if (/support|help|contact|phone/.test(text)) return "support";
-  if (/agent|realtor|staff|representative/.test(text)) return "agent";
-  if (/rent|lease/.test(text)) return "renting";
-  if (/buy|purchase/.test(text)) return "buying";
-  if (/sell/.test(text)) return "selling";
+  // App synonyms
+  if (/app|mobile|application|download/.test(text)) return "Is there a mobile app?";
 
-  return null; 
+  // Pricing synonyms
+  if (/price|cost|fee|charge|commission/.test(text)) return "What’s the price range of your listings?";
+
+  // Paperwork synonyms
+  if (/paperwork|document|docs|agreement|legal/.test(text)) return "Do you help with paperwork?";
+
+  // Location synonyms
+  if (/location|where|area|city|site|region/.test(text)) return "Which areas do you cover?";
+
+  // Support synonyms
+  if (/support|help|contact|phone|call|customer service/.test(text)) return "How do I contact an agent?";
+
+  // Agent synonyms
+  if (/agent|realtor|staff|representative|broker/.test(text)) return "How do I contact an agent?";
+
+  // Renting synonyms
+  if (/rent|lease|tenant/.test(text)) return "renting";
+
+  // Buying synonyms
+  if (/buy|purchase|acquire|own/.test(text)) return "buying";
+
+  // Selling synonyms
+  if (/sell|listing|post property/.test(text)) return "selling";
+
+  return null;
 }
 
 
@@ -475,7 +544,6 @@ function removeTypingIndicator() {
   if (indicator) indicator.remove();
 }
 
-// Send message
 // Send message
 function sendMessage() {
   const text = input.value.trim();
