@@ -344,15 +344,15 @@ const qaPairs = {
   "🤝 Yes, in fact we partner with developers on new projects. That gives our clients early access to off-plan deals and fresh developments that might not yet be available on the open market."
 ],
   // 📅 Viewings & Tours
-"How can I schedule a viewing?": 
+"How can I schedule a viewing?":[ 
   "📅 It’s very simple. Once you see a property you like, just let us know through the listing page or contact our office directly. We’ll arrange a convenient date and time, and one of our agents will personally meet you at the property to give you a tour.",
-
-"Do you offer virtual tours?": 
+],
+"Do you offer virtual tours?": [
   "🖥️ Yes, many of our properties now come with 3D virtual tours and video walk-throughs. This is especially helpful if you’re busy or not currently in town — you can explore the property online before deciding whether to book a physical visit.",
-
-"Can I visit multiple properties in one day?": 
+],
+"Can I visit multiple properties in one day?": [
   "✔️ Absolutely. If you’d like to see several options in one day, we can arrange back-to-back viewings. Just share the list of properties you’re interested in, and we’ll organize the schedule so it’s smooth and convenient for you.",
-
+],
 // ➕ Extra likely real-life questions
 "Do I need to pay before booking a viewing?": [
   "💳 No, viewings are completely free. You don’t need to make any payments before seeing a property. We only discuss fees or agreements after you’ve chosen a property you’re serious about.",
@@ -619,52 +619,16 @@ const qaPairs = {
 
 };
 
-// --- Synonym & intent normalization ---
-function detectIntent(text) {
-  text = text.toLowerCase();
-
-  // App synonyms
-  if (/app|mobile|application|download/.test(text)) return "Is there a mobile app?";
-
-  // Pricing synonyms
-  if (/price|cost|fee|charge|commission/.test(text)) return "What’s the price range of your listings?";
-
-  // Paperwork synonyms
-  if (/paperwork|document|docs|agreement|legal/.test(text)) return "Do you help with paperwork?";
-
-  // Location synonyms
-  if (/location|where|area|city|site|region/.test(text)) return "Which areas do you cover?";
-
-  // Support synonyms
-  if (/support|help|contact|phone|call|customer service/.test(text)) return "How do I contact an agent?";
-
-  // Agent synonyms
-  if (/agent|realtor|staff|representative|broker/.test(text)) return "How do I contact an agent?";
-
-  // Renting synonyms
-  if (/rent|lease|tenant/.test(text)) return "renting";
-
-  // Buying synonyms
-  if (/buy|purchase|acquire|own/.test(text)) return "buying";
-
-  // Selling synonyms
-  if (/sell|listing|post property/.test(text)) return "selling";
-
-  return null;
-}
-
-
+// ───────────────────────────────
+// DOM references
+// ───────────────────────────────
 const suggestionsBox = document.getElementById("suggestions");
 const input = document.getElementById("user-input");
 const messages = document.getElementById("chat-messages");
 
-// --- Fuse.js setup ---
-const fuse = new Fuse(Object.keys(qaPairs), {
-  includeScore: true,
-  threshold: 0.4 // lower = stricter matching
-});
-
-// Helper: Add message
+// ───────────────────────────────
+// Helpers
+// ───────────────────────────────
 function addMessage(text, sender) {
   const div = document.createElement("div");
   div.classList.add("message", sender);
@@ -673,7 +637,6 @@ function addMessage(text, sender) {
   messages.scrollTop = messages.scrollHeight;
 }
 
-// Typing indicator
 function addTypingIndicator() {
   const div = document.createElement("div");
   div.classList.add("message", "bot", "typing");
@@ -687,33 +650,49 @@ function removeTypingIndicator() {
   if (indicator) indicator.remove();
 }
 
+// Normalize synonyms → canonical keys
+function normalizeInput(text) {
+  text = text.toLowerCase();
+
+  if (text.includes("sell") || text.includes("list")) return "selling";
+  if (text.includes("buy") || text.includes("purchase")) return "buying";
+  if (text.includes("rent") || text.includes("lease")) return "renting";
+  if (text.includes("agent") || text.includes("contact")) return "contact agent";
+
+  return text; // fallback: keep original
+}
+
+// ───────────────────────────────
+// Build Fuse index
+// ───────────────────────────────
+const fuseData = Object.keys(qaPairs).map(key => ({ question: key }));
+const fuse = new Fuse(fuseData, {
+  keys: ["question"],
+  threshold: 0.4,
+});
+
+// ───────────────────────────────
 // Send message
+// ───────────────────────────────
 function sendMessage() {
-  const text = input.value.trim();
+  let text = input.value.trim();
   if (!text) return;
+
   addMessage(text, "user");
   input.value = "";
   suggestionsBox.style.display = "none";
 
-  let reply = null;
+  // normalize synonyms before search
+  text = normalizeInput(text);
 
-  // --- Try regex intent detection first ---
-  const intentKey = detectIntent(text);
-  if (intentKey && qaPairs[intentKey]) {
-    const answers = qaPairs[intentKey];
+  let reply = null;
+  const result = fuse.search(text);
+  if (result.length > 0) {
+    const bestMatch = result[0].item.question;
+    const answers = qaPairs[bestMatch];
     reply = Array.isArray(answers)
       ? answers[Math.floor(Math.random() * answers.length)]
       : answers;
-  } else {
-    // --- Fall back to Fuse.js ---
-    const result = fuse.search(text);
-    if (result.length > 0) {
-      const bestMatch = result[0].item;
-      const answers = qaPairs[bestMatch];
-      reply = Array.isArray(answers)
-        ? answers[Math.floor(Math.random() * answers.length)]
-        : answers;
-    }
   }
 
   // Bot reply with typing effect
@@ -723,12 +702,13 @@ function sendMessage() {
       removeTypingIndicator();
       addMessage("🤔 Sorry, I don’t have an answer for that yet.", "bot");
 
-      // WhatsApp button
+      // WhatsApp fallback button
       const btn = document.createElement("a");
       btn.href = "https://wa.me/2348144435485?text=Hello%20Real%20EstateX";
       btn.target = "_blank";
       btn.className = "whatsapp-btn";
       btn.innerHTML = "💬 Chat with Real EstateX on WhatsApp";
+
       const wrapper = document.createElement("div");
       wrapper.classList.add("message", "bot");
       wrapper.appendChild(btn);
@@ -743,17 +723,18 @@ function sendMessage() {
   }
 }
 
+// ───────────────────────────────
 // Suggestions on typing
+// ───────────────────────────────
 input.addEventListener("input", () => {
-  const query = input.value.toLowerCase();
+  const query = normalizeInput(input.value.toLowerCase());
   suggestionsBox.innerHTML = "";
   if (!query) {
     suggestionsBox.style.display = "none";
     return;
   }
 
-  const matches = fuse.search(query).map(r => r.item);
-
+  const matches = fuse.search(query).map(r => r.item.question);
   if (matches.length === 0) {
     suggestionsBox.style.display = "none";
     return;
@@ -772,7 +753,9 @@ input.addEventListener("input", () => {
   suggestionsBox.style.display = "block";
 });
 
+// ───────────────────────────────
 // Enter key to send
+// ───────────────────────────────
 input.addEventListener("keydown", (e) => {
   if (e.key === "Enter") sendMessage();
 });
