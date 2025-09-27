@@ -318,122 +318,224 @@ document.addEventListener('DOMContentLoaded', () => {
 
 const qaPairs = {
   // 🏠 About Properties
-  "Do you have houses for sale?": [
-    "🏡 Yes! We regularly list houses for sale in different sizes and budgets.",
-    "Absolutely — we’ve got houses for sale across multiple locations."
-  ],
-  "Do you have apartments for rent?": [
-    "🏢 Yes, we have apartments available for both short-term and long-term rent.",
-    "✔️ You’ll find a wide selection of rental apartments on our platform."
-  ],
-  "What kind of properties do you deal with?": [
-    "From apartments, houses, and land to luxury villas — we cover all property types.",
-    "✨ We handle sales and rentals for apartments, homes, land, and even commercial spaces."
-  ],
-  "Do you handle commercial properties?": [
-    "🏢 Yes, we list offices, shops, and warehouses available for sale and rent.",
-    "Absolutely — commercial spaces are part of our portfolio."
-  ],
-  "Do you offer luxury properties?": [
-    "🌟 Yes, we have premium listings including villas, penthouses, and luxury estates.",
-    "From high-end apartments to beachfront villas — we’ve got luxury options too."
-  ],
-
+"Do you have houses for sale?": [
+  "🏡 Yes, we do. We regularly list houses for sale in different sizes, styles, and price ranges. Whether you’re looking for a starter home, a family house, or something more upscale, we’ll help you find options that match your budget and preferred location.",
+],
+"Do you have apartments for rent?": [
+  "🏢 Absolutely. We have apartments available for both short-term and long-term rent. Some are fully furnished for quick move-ins, while others are unfurnished so you can set them up to your taste. You can choose based on your budget and the area you prefer.",
+],
+"What kind of properties do you deal with?": [
+  "✨ We handle a wide range of properties — from apartments and houses to land, luxury villas, and even commercial spaces like shops and offices. Basically, if it’s real estate, we can help you buy, rent, or sell it.",
+],
+"Do you handle commercial properties?": [
+  "🏢 Yes, we do. We list commercial spaces such as offices, shops, warehouses, and even larger developments. If you’re looking for a business space, we can match you with locations that suit your type of business and budget.",
+],
+"Do you offer luxury properties?": [
+  "🌟 Yes, we specialize in premium listings as well — including penthouses, villas, beachfront homes, and luxury estates. If you’re looking for something exclusive and high-end, we can connect you with the right properties.",
+],
+// ➕ Extra likely real-life questions
+"Do you have land for sale?": [
+  "🌱 Yes, we also list plots of land. Some are residential, some commercial, and we even feature land in developing areas for investment purposes. We’ll guide you on location, pricing, and the right paperwork to ensure it’s a safe purchase.",
+],
+"Can I find both new and old houses through you?": [
+  "🏗️ Definitely. We list brand new builds as well as older, already lived-in houses. Some people prefer new developments, while others like homes with history and character. We make both options available.",
+],
+"Do you deal with developers directly?": [
+  "🤝 Yes, in fact we partner with developers on new projects. That gives our clients early access to off-plan deals and fresh developments that might not yet be available on the open market."
+],
   // 📅 Viewings & Tours
-  "How can I schedule a viewing?": [
-    "📅 Simply pick a property you like and request a viewing directly from the listing.",
-    "You can book a viewing by contacting the agent on the property details page."
-  ],
-  "Do you offer virtual tours?": [
-    "🖥️ Yes, many of our listings include 3D virtual tours.",
-    "Some properties come with virtual tours — look for the 🎥 icon on the listing."
-  ],
-  "Can I visit multiple properties in one day?": [
-    "Yes, our agents can arrange back-to-back viewings for your convenience.",
-    "Of course — just let us know which properties interest you and we’ll schedule accordingly."
-  ],
+"How can I schedule a viewing?": 
+  "📅 It’s very simple. Once you see a property you like, just let us know through the listing page or contact our office directly. We’ll arrange a convenient date and time, and one of our agents will personally meet you at the property to give you a tour.",
 
+"Do you offer virtual tours?": 
+  "🖥️ Yes, many of our properties now come with 3D virtual tours and video walk-throughs. This is especially helpful if you’re busy or not currently in town — you can explore the property online before deciding whether to book a physical visit.",
+
+"Can I visit multiple properties in one day?": 
+  "✔️ Absolutely. If you’d like to see several options in one day, we can arrange back-to-back viewings. Just share the list of properties you’re interested in, and we’ll organize the schedule so it’s smooth and convenient for you.",
+
+// ➕ Extra likely real-life questions
+"Do I need to pay before booking a viewing?": [
+  "💳 No, viewings are completely free. You don’t need to make any payments before seeing a property. We only discuss fees or agreements after you’ve chosen a property you’re serious about.",
+],
+"How long does a typical viewing take?": [
+  "⏳ On average, a property viewing takes about 20–40 minutes depending on the size of the property. Larger houses or estates may take a little longer because we go through every section carefully.",
+],
+"Can I bring family or friends to the viewing?": [
+  "👨‍👩‍👧‍👦 Yes, of course. Many clients like to bring along family, friends, or even business partners to help with the decision. We actually encourage it so you feel more confident about your choice."
+],
   // 💰 Pricing & Costs
-  "What’s the price range of your listings?": [
-    "💰 Our listings range from affordable starter homes to luxury estates.",
-    "We have properties for every budget — from entry-level to high-end."
-  ],
-  "Do you charge commission?": [
-    "Our commission depends on the property type and agreement — details are shared upfront.",
-    "✔️ Yes, but all fees are transparent and explained before you proceed."
-  ],
-  "What are your agent fees?": [
-    "Agent fees vary, but they’re always stated clearly before any deal is closed.",
-    "Our agent fees are competitive and disclosed upfront."
-  ],
-  "Do you help with mortgages or financing?": [
-    "🏦 Yes, we connect clients with trusted mortgage and financing partners.",
-    "We can guide you through financing options and mortgage assistance."
-  ],
-  "Are there hidden charges?": [
-    "❌ No hidden charges — we believe in transparent pricing.",
-    "Everything is disclosed upfront; there are no surprise fees."
-  ],
+"What’s the price range of your listings?": [
+  "💰 Our listings cover a wide spectrum. For example, we have starter homes from around ₦20M, mid-range family houses, and luxury estates that go well into the hundreds of millions. It really depends on the location and features you’re looking for.",
+  "We cater to every budget — whether you’re a first-time buyer looking for something affordable or an investor going for high-end properties."
+],
 
-  // 📍 Location & Availability
-  "Which areas do you cover?": [
-    "🌍 We cover multiple neighborhoods and cities — check our listings to see available areas.",
-    "Our network spans across different regions — you can filter by your preferred location."
-  ],
-  "Do you have properties in [city/area]?": [
-    "🏠 Yes, we often list properties in that area. Try searching by city name.",
-    "We do! Use the search bar and filter by location to find properties in your area of interest."
-  ],
-  "Can I buy land through your company?": [
-    "🌱 Absolutely — we also list lands available for purchase.",
-    "Yes, land sales are part of our services."
-  ],
-  "Do you deal with new developments?": [
-    "🏗️ Yes, we feature brand new builds and off-plan projects.",
-    "We partner with developers to bring you the latest new projects."
-  ],
+"Do you charge commission?": [
+  "Yes, we do charge commission, but it’s always agreed upon upfront. Typically, commissions in real estate here range between 5–10% depending on the property type and deal structure. We’ll make sure it’s clear before you commit to anything.",
+  "✔️ Commission is standard practice, but we don’t spring surprises. Once we discuss the property with you, we’ll outline the exact rate and terms in writing."
+],
+
+"What are your agent fees?": [
+  "Agent fees vary slightly depending on the service — for example, buying, renting, or leasing have different structures. But don’t worry, we provide a full breakdown before you sign any papers.",
+  "Our fees are competitive compared to the market. For rentals, there’s usually a fixed percentage, and for sales, it’s tied to the property value. Everything is documented."
+],
+
+"Do you help with mortgages or financing?": [
+  "🏦 Yes, we do. We’ve built relationships with banks and financing partners who help our clients secure mortgages. If you qualify, we’ll guide you step-by-step through the paperwork.",
+  "Absolutely. Many of our clients get financing through trusted mortgage providers we recommend. We make introductions and stay with you during the process."
+],
+
+"Are there hidden charges?": [
+  "❌ No, never. What we tell you upfront is exactly what you’ll pay. If there are taxes, legal fees, or extra costs tied to a property, we explain them before you commit.",
+  "We believe in transparency. Every cost is listed in your contract so you’re not caught off guard later."
+],
+
+// ⭐ Extra Real-Life Questions
+"Do you offer payment plans?": [
+  "Yes, some developers we work with provide installment payment options, especially for off-plan projects. We’ll let you know which listings have flexible payment plans.",
+  "Not all properties have payment plans, but when available, we’ll present you with the options and terms."
+],
+
+"How much do I need for the initial deposit?": [
+  "It depends on the property. For rentals, landlords usually request 1–2 years upfront. For purchases, deposits often start from 10–30% of the property value.",
+  "Each case is different, but we’ll tell you exactly what the required deposit is for any property you’re considering."
+],
+
+"Are there extra costs like legal or survey fees?": [
+  "Yes, in addition to the property price, there are usually legal documentation fees, agency fees, and sometimes survey or deed registration costs. We’ll break them down for you.",
+  "Think of it this way: apart from the purchase price, you should budget for lawyer’s fees and statutory charges. We’ll connect you with trusted professionals so there are no surprises."
+],
+
+// 📍 Location & Availability
+"Which areas do you cover?": [
+  "🌍 We cover a wide range of neighborhoods and cities. For example, in Lagos we list properties in Lekki, Ajah, Victoria Island, Ikeja, and more. If you’re looking outside Lagos, we also cover Abuja, Port Harcourt, and other major cities. Just let us know your preferred area, and we’ll show you available options.",
+  "Our network spans across different regions, so whether you want something in a city center, a quiet suburban area, or a fast-developing community, we can help you find it."
+],
+
+"Do you have properties in [city/area]?": [
+  "🏠 Most likely, yes. We update our listings regularly and usually have something in popular areas like [city/area]. If you give me the exact location you have in mind, I can quickly check what’s available right now.",
+  "We do! You can use the search bar on our platform and filter by location. Even if you don’t see it online immediately, let us know — sometimes we have upcoming properties that aren’t yet published."
+],
+
+"Can I buy land through your company?": [
+  "🌱 Absolutely. We handle land sales too — from verified residential plots to larger commercial lands. We always confirm ownership documents and make sure everything is properly verified before you commit.",
+  "Yes, land sales are part of our services. Many of our clients buy plots either for building their own homes or for investment purposes."
+],
+
+"Do you deal with new developments?": [
+  "🏗️ Yes. We regularly feature new developments and off-plan projects. These usually come with modern designs and flexible payment options, making them attractive for first-time buyers or investors.",
+  "Definitely. We partner directly with trusted developers so we can give you access to brand-new projects, sometimes even before they hit the general market."
+],
+
+// ⭐ Extra Real-Life Questions
+"Do you help with properties outside Nigeria?": [
+  "Yes, we have international partners — especially in markets like Dubai, the UK, and the US. If you’re considering an investment abroad, we can link you to verified developers and agents.",
+  "Our main focus is local, but we also list select international properties. Let us know where you’re interested in, and we’ll guide you to the right options."
+],
+
+"Can you help me find a property close to specific landmarks (schools, hospitals, transport)?": [
+  "Of course. If you tell us your priorities — like being close to a good school, hospital, or public transport — we’ll narrow down the search to properties in that exact area.",
+  "Yes. Location convenience is a big part of choosing a home, so we make sure to filter properties based on what matters most to you."
+],
+
+"Do you offer serviced apartments or short-let options in prime locations?": [
+  "Yes, we list serviced apartments and short-lets, especially in high-demand areas like Victoria Island, Ikoyi, and Lekki Phase 1. They’re fully furnished and move-in ready.",
+  "We do. Short-let and serviced apartments are very popular with clients who want flexibility without setting up utilities or furniture. We’ll show you the latest availability."
+],
 
   // 📱 Services & Apps
-  "Is there a mobile app?": [
-    "📱 Our mobile app is launching soon for iOS & Android!",
-    "🚀 We’re working on a user-friendly app — stay tuned!"
-  ],
-  "How do I sign up on your platform?": [
-    "📝 Click the Sign Up button at the top right and follow the steps.",
-    "Just tap ‘Sign Up’, fill in your details, and you’re good to go!"
-  ],
-  "Can I search properties online?": [
-    "🔎 Yes, you can search and filter properties directly on our website.",
-    "✔️ Absolutely! Use the search tool to find exactly what you’re looking for."
-  ],
+"Is there a mobile app?": [
+  "📱 Yes! We’re launching a mobile app very soon for both iOS and Android. The app will make it easier to search, save, and book viewings right from your phone.",
+  "🚀 We’re finalizing a user-friendly app designed for convenience — you’ll be able to browse listings, chat with agents, and get instant updates on new properties."
+],
 
-  // 📞 Support & Contact
-  "How do I contact an agent?": [
-    "📞 Each property page has agent contact details — you can call or message directly.",
-    "Simply go to the property listing and click ‘Contact Agent’."
-  ],
-  "Do you offer 24/7 support?": [
-    "🕑 Yes, our support team is available around the clock.",
-    "✔️ We provide 24/7 support for all your inquiries."
-  ],
-  "Can I talk to someone directly?": [
-    "🤝 Of course! You can call us anytime or use our live chat.",
-    "Yes, our agents are just a phone call away."
-  ],
+"How do I sign up on your platform?": [
+  "📝 It’s simple. Just click the ‘Sign Up’ button at the top right of our website, fill in your details, and create your account. Once you’re signed in, you can save favorites, book viewings, and receive updates.",
+  "You can also sign up with your email or social accounts — it only takes a minute, and you’ll have full access to all our services."
+],
 
-  // 📑 Paperwork & Legal
-  "Do you help with paperwork?": [
-    "📑 Yes, we guide you through all the required paperwork and documentation.",
-    "Absolutely — our team assists with contracts, agreements, and all legal documents."
-  ],
-  "What documents do I need to buy a property?": [
-    "📝 Usually you’ll need an ID, proof of income, and in some cases, a financing approval letter. We’ll guide you step by step.",
-    "The documents depend on the property, but generally include ID, proof of funds, and signed agreements."
-  ],
-  "Do you handle legal documentation?": [
-    "⚖️ Yes, we work with trusted legal experts to make sure your paperwork is safe and valid.",
-    "We coordinate with lawyers and notaries to ensure all documentation is handled properly."
-  ],
+"Can I search properties online?": [
+  "🔎 Absolutely. Our website allows you to search and filter properties by type, price range, location, and even features like swimming pool or number of bedrooms.",
+  "✔️ Yes, just use the search bar and filters to narrow down to exactly what you’re looking for — whether it’s apartments, houses, or commercial spaces."
+],
+
+// ⭐ Extra Real-Life Questions
+"Can I save my favorite properties to check later?": [
+  "Yes, once you’re signed in, you can bookmark any property and access your saved list anytime.",
+  "Definitely. Just click the ‘save’ or ‘favorite’ icon on a property, and it’ll be stored in your personal dashboard."
+],
+
+"Will I get notifications when new properties are listed?": [
+  "Yes — if you enable alerts, we’ll notify you when new properties that match your preferences are added.",
+  "We send instant updates through email and, once the app is live, through push notifications too."
+],
+
+"Do you provide customer support through the app or website?": [
+  "Of course. You can chat with our agents directly on the website, and once the app is launched, you’ll also have in-app messaging and support.",
+  "Yes, customer support is built in. Whether you prefer live chat, email, or phone, you’ll always be able to reach us easily."
+],
+// 📞 Support & Contact
+"How do I contact an agent?": [
+  "📞 Every property listing has the agent’s direct contact information. You can call, WhatsApp, or send a quick message right from the property page.",
+  "If you prefer, you can also request a callback, and one of our agents will reach out to you."
+],
+
+"Do you offer 24/7 support?": [
+  "🕑 Yes, our support team is available 24/7. Whether it’s late at night or during weekends, you can always reach us for assistance.",
+  "We believe property hunting doesn’t have a closing hour, so our lines and chat support are always open."
+],
+
+"Can I talk to someone directly?": [
+  "🤝 Absolutely. You can call our customer care line anytime at +224-546-7860, and you’ll be connected to a real person right away.",
+  "If you’d rather meet face-to-face, we can schedule an in-office appointment with one of our agents."
+],
+
+// ⭐ Extra Real-Life Questions
+"Do you have a live chat option?": [
+  "Yes, our website includes a live chat feature where you can get instant answers from our support team.",
+  "Live chat is available directly on the site and, once the app is launched, it will be available there too."
+],
+
+"Can I reach you through WhatsApp or social media?": [
+  "Definitely — many clients prefer using WhatsApp, and we’re also active on Facebook and Instagram for quick responses.",
+  "Yes, you can message us on WhatsApp or DM us on our official social pages, and our team will respond promptly."
+],
+
+"Do you offer in-office consultations?": [
+  "Yes, if you’d like to sit down and talk through your needs, you can book an appointment and visit our office.",
+  "Of course. We welcome clients in our office where agents can provide tailored property advice in person."
+],
+
+ // 📑 Paperwork & Legal
+"Do you help with paperwork?": [
+  "📑 Yes, we guide you through every step of the paperwork — from initial agreements to final contracts. Our team makes sure you don’t miss any important detail.",
+  "We also review documents with you so that everything is clear before you sign."
+],
+
+"What documents do I need to buy a property?": [
+  "📝 Typically, you’ll need a valid ID, proof of income or financing approval, and proof of funds for the transaction. Depending on the property, we’ll let you know if additional documents are required.",
+  "Don’t worry — we provide a checklist and walk you through the requirements step by step."
+],
+
+"Do you handle legal documentation?": [
+  "⚖️ Yes, we work closely with trusted lawyers and notaries to ensure that all documents — contracts, deeds, and agreements — are valid and legally binding.",
+  "This gives you peace of mind that the process is safe and fully compliant."
+],
+
+// ⭐ Extra Real-Life Questions
+"Do you verify property ownership before I buy?": [
+  "Yes, we carry out thorough due diligence to confirm property ownership and ensure there are no disputes or hidden liabilities.",
+  "Verification is part of our process — we want you to be 100% confident in your purchase."
+],
+
+"Can you help me with title transfer after buying?": [
+  "Absolutely. Once the purchase is completed, we assist with the title transfer and make sure your name is properly registered as the new owner.",
+  "We work with the appropriate authorities to finalize the title transfer smoothly."
+],
+
+"Do you provide legal advice directly?": [
+  "While we’re not a law firm, we connect you with qualified property lawyers who give expert legal advice tailored to your situation.",
+  "Yes, we arrange for professional legal counsel whenever you need detailed legal guidance."
+],
 
   // 📝 Other Practical Questions
   "How long does the buying process take?": [
@@ -445,35 +547,76 @@ const qaPairs = {
     "Buying your first home? Don’t worry — our agents walk you through every step."
   ],
 
-  // 🏠 Renting
-  renting: [
-    "🏘️ We have plenty of rental options for short-term and long-term stays.",
-    "Yes, from budget-friendly rentals to premium apartments — we cover all."
-  ],
-  "Do you help with furnished apartments?": [
-    "🛋️ Yes, we list fully-furnished, semi-furnished, and unfurnished apartments.",
-    "We’ve got furnished rentals — perfect for quick move-ins."
-  ],
+ // 🏠 Renting
+"renting": [
+  "🏘️ We have a wide range of rental options — from budget-friendly apartments to premium serviced flats. Whether you’re looking for short-term stays or long-term leases, we’ll match you with the right property.",
+  "Our agents also explain rental agreements, deposits, and move-in requirements so the process is smooth and transparent."
+],
+"Do you help with furnished apartments?": [
+  "🛋️ Yes, we list fully-furnished, semi-furnished, and unfurnished apartments. If you’re relocating or want a quick move-in, furnished rentals are perfect.",
+  "We also clarify what’s included in the furnishing — from basic appliances to complete setups."
+],
+"Can you help me find rentals close to my workplace?": [
+  "Of course. Just tell us where you work, and we’ll recommend rental options within a convenient distance.",
+  "We prioritize rentals that save you commuting time."
+],
+"Do you assist with rental agreements?": [
+  "Yes, we make sure the agreements are clear, fair, and legally valid before you move in.",
+  "Our team will walk you through every clause so there are no surprises."
+],
+"How much deposit do I need for a rental?": [
+  "Most rentals require a security deposit, usually 1–3 months’ rent depending on the landlord.",
+  "Don’t worry — we explain the terms upfront and advise you on refundable deposits."
+],
+"Can you help me with short-stay or Airbnb-style rentals?": [
+  "Yes, we also have short-term and serviced rental listings for visitors, business trips, or temporary housing.",
+  "These flexible rentals are designed for convenience and comfort."
+],
 
-  // 🛒 Buying
-  buying: [
-    "🏡 You can buy houses, land, and even commercial properties on our platform.",
-    "Buying is simple — browse listings, book a viewing, and proceed with secure payments."
-  ],
+// 🛒 Buying
+"buying": [
+  "🏡 You can buy houses, land, or even commercial properties through our platform. The process is simple: browse listings, book a viewing, and we’ll guide you through secure payment and ownership transfer.",
+  "We also connect you with financing options if needed, so the buying journey is straightforward."
+],
+"Do you assist with mortgage or financing?": [
+  "Yes, we connect buyers with trusted banks and mortgage providers for financing support.",
+  "We’ll help you understand loan options and guide you through pre-approval."
+],
+"Can I negotiate property prices?": [
+  "Absolutely. Our agents assist with negotiation to help you secure the best deal possible.",
+  "We advise you on fair market value so you don’t overpay."
+],
+"Do you verify if the property is free from disputes?": [
+  "Yes, part of our process is due diligence to confirm the property has no disputes, debts, or unpaid taxes.",
+  "This ensures you buy with complete confidence and peace of mind."
+],
 
-  // 💼 Selling
-  selling: [
-    "📢 Yes, we help owners list and sell their properties quickly.",
-    "Our agents ensure your property gets maximum exposure and the best deal."
-  ],
-  "Can I list my property with you?": [
-    "✅ Absolutely! Property owners can list directly through our platform.",
-    "Yes, just head to the 'List Property' section and upload your details."
-  ],
-  "How fast can you sell my property?": [
-    "⏱️ Speed depends on location, pricing, and demand — but we work hard to sell quickly.",
-    "Many listings get interest within days thanks to our wide reach."
-  ]
+// 💼 Selling
+"selling": [
+  "📢 Yes, we help property owners list and sell quickly. Our team markets your property across multiple channels to attract serious buyers.",
+  "We also guide you on pricing and presentation to maximize your property’s value."
+],
+"Can I list my property with you?": [
+  "✅ Absolutely. Property owners can list directly on our platform — just go to the ‘List Property’ section, upload your details, and our agents will review and publish it.",
+  "If you prefer, you can also contact us directly and we’ll handle the listing for you."
+],
+"How fast can you sell my property?": [
+  "⏱️ Speed depends on location, demand, and pricing — but many of our listings get interest within days.",
+  "We actively promote new listings to ensure maximum visibility from the start."
+],
+"Do you help with property valuation before selling?": [
+  "Yes, we provide valuation services so you know the fair market value before listing.",
+  "Accurate valuation helps your property sell faster and ensures you don’t underprice or overprice it."
+],
+"Can you market my property to more buyers?": [
+  "Definitely. We promote your property through social media, email alerts, and partner platforms.",
+  "The goal is to maximize exposure and attract serious buyers quickly."
+],
+"Do you handle the paperwork after finding a buyer?": [
+  "Yes, we assist you from negotiation through to final paperwork and closing.",
+  "We also coordinate with lawyers and notaries to ensure everything is legally binding."
+],
+
 };
 
 // --- Synonym & intent normalization ---
