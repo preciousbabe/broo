@@ -26,14 +26,15 @@
       </div>
       <ul class="nav__links" id="nav-links">
         <li><a href="#home">HOME</a></li>
+        <li><a href="#about">ABOUT</a></li>
         <li><a href="#service">SERVICES</a></li>
         <li><a href="#property">PROPERTIES</a></li>
-        <li><a href="#blog">BLOGS</a></li>
+         <li><a href="#questions">QUESTIONS</a></li>
         <li><a href="#contact">CONTACT</a></li>
       </ul>
     </nav>
 
-    <header id="header">
+    <header id="home">
       <div class="header__image"></div>
       <div class="header__content">
         <h1>Find Your Dream Home With Ease.</h1>
@@ -58,7 +59,7 @@
 
     </header>
 
-    <section class="service">
+    <section id="service" class="service">
       <div class="section__container service__container" id="service">
         <h2 class="section__header">What We Offer</h2>
         <div class="service__grid">
@@ -82,7 +83,7 @@
     </section>
 
 
-     <section class="experience">
+     <section id="about" class="experience">
       <div class="experience__image"></div>
       <div class="experience__content">
         <h2 class="section__header">We Provide You<br />The Best Experience</h2>
@@ -409,21 +410,20 @@ From modern apartments in the city to spacious family homes in quiet neighborhoo
     </section>
 
 
-    <section class="chatbox">
+    <section class="chatbox" id="questions">
     <h3 class="section__header">Ask Questions? </h3>
-     <h4>Do you have questions you will like to ask?, go on...</h4>
+    <h4>Do you have questions you will like to ask?, go on...</h4>
     <div class="chat-messages" id="chat-messages"></div>
     <div class="chat-input">
-      <div>
-        <input type="text" id="user-input" placeholder="Type your question..." autocomplete="off">
-        <div id="suggestions" class="suggestions" style="display: none;"></div>
-      </div>
-      <button onclick="sendMessage()">Send</button>
+    <div style="flex:1; position:relative;">
+    <input type="text" id="user-input" placeholder="Type your question..." autocomplete="off">
+    <div id="suggestions" class="suggestions" style="display: none;"></div>
     </div>
-  </section>
+    <button onclick="sendMessage()">Send</button>
+    </div>
+    </section>
 
   
-
      <footer>
       <div class="section__container footer__container">
         <div class="footer__col">
@@ -460,6 +460,7 @@ From modern apartments in the city to spacious family homes in quiet neighborhoo
 
 
       <script src="https://unpkg.com/scrollreveal"></script>
+      <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="main.js"></script>
   </body>

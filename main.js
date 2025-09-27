@@ -317,54 +317,140 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-
 const qaPairs = {
-  "What types of properties do you offer?": [
-    "🏡 We’ve got everything from cozy apartments to luxury villas, cabins, and penthouses.",
-    "✨ From apartments to villas, cabins, and even penthouses — we’ve got options for every lifestyle.",
-    "Apartments, villas, cabins, penthouses… name it, and we probably have it available!"
+  // 🏠 About Properties
+  "Do you have houses for sale?": [
+    "🏡 Yes! We regularly list houses for sale in different sizes and budgets.",
+    "Absolutely — we’ve got houses for sale across multiple locations."
   ],
-  "How can I book a property?": [
-    "📅 Simply select your desired property, choose your dates, and hit 'Reserve'.",
-    "Booking is easy: pick your property, select your dates, and tap Reserve ✔️."
+  "Do you have apartments for rent?": [
+    "🏢 Yes, we have apartments available for both short-term and long-term rent.",
+    "✔️ You’ll find a wide selection of rental apartments on our platform."
   ],
-  "Is payment secure?": [
-    "✅ Absolutely! Your payments are encrypted and fully secure.",
-    "💳 Yes, all transactions are protected with top-level encryption."
+  "What kind of properties do you deal with?": [
+    "From apartments, houses, and land to luxury villas — we cover all property types.",
+    "✨ We handle sales and rentals for apartments, homes, land, and even commercial spaces."
   ],
-  "Do you verify your listings?": [
-    "🔍 Of course! Every property goes through a strict verification process for safety and authenticity.",
-    "👍 Yes, we carefully verify each listing before it goes live."
+  "How can I schedule a viewing?": [
+    "📅 Simply pick a property you like and request a viewing directly from the listing.",
+    "You can book a viewing by contacting the agent on the property details page."
   ],
-  "Can I list my property here?": [
-    "🏠 Definitely! Just click the 'Host' tab to start listing your property.",
-    "Yes! Tap on the 'Host' section to begin listing your property today."
+  "Do you offer virtual tours?": [
+    "🖥️ Yes, many of our listings include 3D virtual tours.",
+    "Some properties come with virtual tours — look for the 🎥 icon on the listing."
   ],
-  "Do you offer support?": [
-    "📞 Our support team is available 24/7 to help you anytime.",
-    "🤝 Yes, we’re always here to support you, day or night."
+
+  // 💰 Pricing & Costs
+  "What’s the price range of your listings?": [
+    "💰 Our listings range from affordable starter homes to luxury estates.",
+    "We have properties for every budget — from entry-level to high-end."
   ],
-  "Where are you located?": [
-    "🌍 We’re a global platform, but our HQ is in Miami.",
-    "Our team is worldwide, though our main office is in Miami."
+  "Do you charge commission?": [
+    "Our commission depends on the property type and agreement — details are shared upfront.",
+    "✔️ Yes, but all fees are transparent and explained before you proceed."
   ],
-  "What is the cancellation policy?": [
-    "📌 Cancellation policies vary by property — check the listing page for details.",
-    "It depends on the property. Each listing has its own cancellation rules."
+  "What are your agent fees?": [
+    "Agent fees vary, but they’re always stated clearly before any deal is closed.",
+    "Our agent fees are competitive and disclosed upfront."
   ],
-  "Do you offer property management?": [
-    "🛠️ Yes, we also provide property management services for hosts.",
-    "We sure do! Property management is part of our services for hosts."
+  "Do you help with mortgages or financing?": [
+    "🏦 Yes, we connect clients with trusted mortgage and financing partners.",
+    "We can guide you through financing options and mortgage assistance."
   ],
+  "Are there hidden charges?": [
+    "❌ No hidden charges — we believe in transparent pricing.",
+    "Everything is disclosed upfront; there are no surprise fees."
+  ],
+
+  // 📍 Location & Availability
+  "Which areas do you cover?": [
+    "🌍 We cover multiple neighborhoods and cities — check our listings to see available areas.",
+    "Our network spans across different regions — you can filter by your preferred location."
+  ],
+  "Do you have properties in [city/area]?": [
+    "🏠 Yes, we often list properties in that area. Try searching by city name.",
+    "We do! Use the search bar and filter by location to find properties in your area of interest."
+  ],
+  "Can I buy land through your company?": [
+    "🌱 Absolutely — we also list lands available for purchase.",
+    "Yes, land sales are part of our services."
+  ],
+
+  // 📱 Services & Apps
   "Is there a mobile app?": [
-    "📱 Our mobile app is launching soon for both iOS and Android!",
-    "🚀 We’re working on an app — it’ll be live soon on iOS & Android."
+    "📱 Our mobile app is launching soon for iOS & Android!",
+    "🚀 We’re working on a user-friendly app — stay tuned!"
+  ],
+  "How do I sign up on your platform?": [
+    "📝 Click the Sign Up button at the top right and follow the steps.",
+    "Just tap ‘Sign Up’, fill in your details, and you’re good to go!"
+  ],
+  "Can I search properties online?": [
+    "🔎 Yes, you can search and filter properties directly on our website.",
+    "✔️ Absolutely! Use the search tool to find exactly what you’re looking for."
+  ],
+
+  // 📞 Support & Contact
+  "How do I contact an agent?": [
+    "📞 Each property page has agent contact details — you can call or message directly.",
+    "Simply go to the property listing and click ‘Contact Agent’."
+  ],
+  "Do you offer 24/7 support?": [
+    "🕑 Yes, our support team is available around the clock.",
+    "✔️ We provide 24/7 support for all your inquiries."
+  ],
+  "Can I talk to someone directly?": [
+    "🤝 Of course! You can call us anytime or use our live chat.",
+    "Yes, our agents are just a phone call away."
+  ],
+
+  "Do you help with paperwork?": [
+  "📑 Yes, we guide you through all the required paperwork and documentation.",
+  "Absolutely — our team assists with contracts, agreements, and all legal documents."
+],
+"What documents do I need to buy a property?": [
+  "📝 Usually you’ll need an ID, proof of income, and in some cases, a financing approval letter. We’ll guide you step by step.",
+  "The documents depend on the property, but generally include ID, proof of funds, and signed agreements."
+],
+"Do you handle legal documentation?": [
+  "⚖️ Yes, we work with trusted legal experts to make sure your paperwork is safe and valid.",
+  "We coordinate with lawyers and notaries to ensure all documentation is handled properly."
+],
+
+  // 📝 Other Practical Questions
+  "How long does the buying process take?": [
+    "⏳ It depends on the property and paperwork, but most deals close within a few weeks.",
+    "On average, the buying/renting process takes a few days to a few weeks depending on requirements."
   ]
 };
+
+// --- Simple regex-based intent detection ---
+function detectIntent(text) {
+  text = text.toLowerCase();
+
+  if (/app|download|mobile/.test(text)) return "app";
+  if (/price|cost|how much|fee/.test(text)) return "pricing";
+  if (/paperwork|documents|docs|agreement/.test(text)) return "paperwork";
+  if (/location|where|area|site/.test(text)) return "location";
+  if (/support|help|contact|phone/.test(text)) return "support";
+  if (/agent|realtor|staff|representative/.test(text)) return "agent";
+  if (/rent|lease/.test(text)) return "renting";
+  if (/buy|purchase/.test(text)) return "buying";
+  if (/sell/.test(text)) return "selling";
+
+  return null; 
+}
+
 
 const suggestionsBox = document.getElementById("suggestions");
 const input = document.getElementById("user-input");
 const messages = document.getElementById("chat-messages");
+
+// --- Fuse.js setup ---
+const fuse = new Fuse(Object.keys(qaPairs), {
+  includeScore: true,
+  threshold: 0.4 // lower = stricter matching
+});
 
 // Helper: Add message
 function addMessage(text, sender) {
@@ -390,6 +476,7 @@ function removeTypingIndicator() {
 }
 
 // Send message
+// Send message
 function sendMessage() {
   const text = input.value.trim();
   if (!text) return;
@@ -397,20 +484,24 @@ function sendMessage() {
   input.value = "";
   suggestionsBox.style.display = "none";
 
-  const normalize = str => str.toLowerCase().replace(/[^\w\s]/gi, '').trim();
-  const userNormalized = normalize(text);
-
   let reply = null;
 
-  // Partial matching
-  for (let question of Object.keys(qaPairs)) {
-    const qNorm = normalize(question);
-    if (userNormalized.includes(qNorm) || qNorm.includes(userNormalized)) {
-      const answers = qaPairs[question];
+  // --- Try regex intent detection first ---
+  const intentKey = detectIntent(text);
+  if (intentKey && qaPairs[intentKey]) {
+    const answers = qaPairs[intentKey];
+    reply = Array.isArray(answers)
+      ? answers[Math.floor(Math.random() * answers.length)]
+      : answers;
+  } else {
+    // --- Fall back to Fuse.js ---
+    const result = fuse.search(text);
+    if (result.length > 0) {
+      const bestMatch = result[0].item;
+      const answers = qaPairs[bestMatch];
       reply = Array.isArray(answers)
         ? answers[Math.floor(Math.random() * answers.length)]
         : answers;
-      break;
     }
   }
 
@@ -450,9 +541,7 @@ input.addEventListener("input", () => {
     return;
   }
 
-  const matches = Object.keys(qaPairs).filter(q =>
-    q.toLowerCase().includes(query)
-  );
+  const matches = fuse.search(query).map(r => r.item);
 
   if (matches.length === 0) {
     suggestionsBox.style.display = "none";

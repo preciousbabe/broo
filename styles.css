@@ -511,7 +511,7 @@ header .btn {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-   padding-block: 2rem 1rem;
+   padding: 0.5rem 0.5rem 5rem;
 }
 
 /* Header */
@@ -537,8 +537,9 @@ header .btn {
 .chat-input input {
    flex: 1;
     border: none; 
-    /* padding: 25px;  */
+    padding: 25px; 
     font-size: 1rem;
+    margin-top: 25px;
    }
 
 /* Messages */
@@ -546,7 +547,7 @@ header .btn {
   padding: 12px;
   flex: 1;
   overflow-y: auto;
-  max-height: 60vh; 
+  max-height: 40vh; 
 }
 
 .message {
@@ -591,37 +592,53 @@ header .btn {
   40% { opacity: 1; }
 }
 
-/* Input */
+/* Input wrapper */
 .chat-input {
   display: flex;
-  border-top: 1px solid #ddd;
+  align-items: center;
+  justify-content: space-between; /* input on left, button on right */
+  border-top: 1px solid #e5e9f2;
+  background: #fff;
+  padding: 8px;
+  gap: 10px;
+  position: relative; /* for suggestions dropdown */
 }
 
 .chat-input input {
-  flex: 1;
+  flex: 1; /* take up all available space */
+  width: 100%;
   border: none;
-  /* padding: 16px; */
+  padding: 14px;
   font-size: 1rem;
+  border-radius: 8px;
+  transition: box-shadow 0.3s ease, border 0.3s ease;
 }
 
 .chat-input input:focus {
   outline: none;
+  border: 1px solid #0078ff;
+  box-shadow: 0 0 8px rgba(0, 120, 255, 0.3);
 }
 
+
 .chat-input button {
-  background: var(--primary-color);
+  background: linear-gradient(135deg, #0078ff, #00d4ff);
   color: white;
   border: none;
   padding: 14px 20px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background 0.3s ease;
+  margin-top: 25px;
+  transition: transform 0.2s ease, background 0.3s ease;
+  flex-shrink: 0; 
 }
 
 .chat-input button:hover {
-  background: #0e79c0;
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #005fcc, #00b0d4);
 }
 
-/* Suggestions dropdown */
+/* Suggestions dropdown (now always visible & full width under input) */
 .suggestions {
   background: #fff;
   border: 1px solid #ddd;
@@ -630,8 +647,21 @@ header .btn {
   max-height: 150px;
   overflow-y: auto;
   position: absolute;
-  width: calc(100% - 2px);
+  left: 8px;
+  right: 8px;
+  top: 100%; /* directly below input */
+  margin-top: 2px;
   z-index: 1000;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.3s ease;
+}
+
+.suggestions div {
+  padding: 10px;
+  cursor: pointer;
+}
+.suggestions div:hover {
+  background: #f0f4f8;
 }
 
 .suggestions div {
@@ -670,11 +700,11 @@ header .btn {
 @media (max-width: 768px) {
   .chatbox {
     width: 95%;
-    margin: 20px auto;
+    margin: 10px auto;
   }
 
   .chat-messages {
-    max-height: 50vh;
+    max-height: 20vh;
     padding: 10px;
   }
 
@@ -698,7 +728,7 @@ header .btn {
   }
 
   .chat-messages {
-    max-height: calc(100vh - 120px); 
+    max-height: calc(100vh - 230px);
   }
 
   .chat-header {
