@@ -159,10 +159,9 @@ nav {
 }
 
 header {
-  padding-block: 5rem 4rem;
+  padding-block: 4rem 2rem;
   display: grid;
   position: relative;
-  isolation: isolate;
 }
 
 .header__image {
@@ -190,10 +189,10 @@ header {
 header form {
   position: absolute;
   bottom: 0;
-  left: 48%;
+  left: 43%;
   transform: translateX(-50%);
   width: 90%;
-  max-width: 500px;
+  max-width: 450px;
   padding: 2rem;
   display: flex;
   align-items: center;
@@ -514,6 +513,54 @@ header .btn {
    padding: 0.5rem 0.5rem 5rem;
 }
 
+/* SWIPE HINT */
+.swipe-hint {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin:-75px auto 25px;
+  color: #666;
+  font-size: 14px;
+  font-weight: 500;
+  opacity: 0.8;
+}
+
+/* ARROWS */
+.swipe-hint .arrow {
+  font-size: 18px;
+  animation: swipeAnim 1.5s infinite;
+}
+
+/* LEFT moves left */
+.swipe-hint .left {
+  animation-delay: 0s;
+}
+
+/* RIGHT moves right */
+.swipe-hint .right {
+  animation-delay: 0.3s;
+}
+
+/* TEXT */
+.swipe-hint .text {
+  letter-spacing: 1px;
+}
+
+/* ANIMATION */
+@keyframes swipeAnim {
+  0% { transform: translateX(0); opacity: 0.5; }
+  50% { transform: translateX(6px); opacity: 1; }
+  100% { transform: translateX(0); opacity: 0.5; }
+}
+
+/* MOBILE: make it more visible */
+@media (max-width: 768px) {
+  .swipe-hint {
+    font-size: 13px;
+  }
+}
+
 /* Header */
 .chat-header {
   background: var(--primary-color);
@@ -531,6 +578,7 @@ header .btn {
 
 .chat-input { 
   display: flex;
+  margin-top: 2rem;
    border-top: 1px solid #ddd; 
   }
 
@@ -701,6 +749,7 @@ header .btn {
   .chatbox {
     width: 95%;
     margin: 10px auto;
+    height: 90vh; 
   }
 
   .chat-messages {
@@ -724,7 +773,7 @@ header .btn {
     width: 100%;
     margin: 0;
     border-radius: 0; 
-    height: 100vh; 
+    height: 50vh; 
   }
 
   .chat-messages {
